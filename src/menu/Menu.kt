@@ -37,7 +37,11 @@ class Menu {
                 }
                 "ver lista" -> {
                     //TODO: terminar de implementar lógica (2/3)
-                    /*listaAlimentos.forEach { alimento, quantidade ->  }*/
+                    listaAlimentos.forEach { alimento, quantidade ->
+                        println(alimento)
+                        println("LISTA LUCIANO EXERCICIO 3")
+                        println(quantidade)
+                    }
                 }
                 "sair" -> {
                     println("Até breve!")
