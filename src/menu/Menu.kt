@@ -36,9 +36,9 @@ class Menu {
                     //TODO: terminar de implementar lógica (1/3)
                 }
                 "ver lista" -> {
-                    //TODO: terminar de implementar lógica (2/3)
-                    /*listaAlimentos.forEach { alimento, quantidade ->  }*/
+                    listaAlimentos.forEach { alimento, quantidade -> println("$alimento $quantidade") }
                 }
+
                 "sair" -> {
                     println("Até breve!")
                     exitProcess(0)

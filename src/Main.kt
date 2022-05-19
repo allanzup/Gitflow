@@ -1,4 +1,4 @@
-import menu.Menu.Companion.menu
+            import menu.Menu.Companion.menu
 
 fun main() {
     menu()
