@@ -5,25 +5,7 @@ afinal é um sistema de lista de compras. Não confundir com o conceito de List 
 class ListaCompras {
     companion object {
         fun informarQuantidadeVerduraGrao(alimento: String): Int {
-            println("Informe a quantidade de $alimento em gramas: ")
-            val input = readln()
-
-            if (input.isEmpty() || input.isBlank()) {
-                throw UnsupportedOperationException("Não é permitido inserir valor vazio")
-            }
-
-            var gramas = 0
-            try {
-                gramas = input.toInt()
-                if (gramas < 0) {
-                    println("Não é permitido números negativos, tente novamente")
-                    informarQuantidadeVerduraGrao(alimento)
-                }
-
-            } catch (exception: NumberFormatException) {
-                println("Não é permitido texto, somente número")
-            }
-            return gramas
+            return informaquantidadedealimento(alimento)
         }
 
         fun informarNomeAlimento(alimento: String): String {
@@ -36,24 +18,30 @@ class ListaCompras {
             return nome
         }
 
-        fun informarQuantidadeLegumeOutros(alimento: String): Int{
-            println("Informe a quantidade de $alimento ")
-            var qtd = readln()
-            if (qtd.isEmpty() || qtd.isBlank()) {
+        fun informarQuantidadeLegumeOutros(alimento: String): Int {
+            return informaquantidadedealimento(alimento)
+        }
+        fun informaquantidadedealimento(alimento: String):Int {
+            println("Informe a quantidade de $alimento em gramas: ")
+            val input = readln()
+
+            if (input.isEmpty() || input.isBlank()) {
                 throw UnsupportedOperationException("Não é permitido inserir valor vazio")
             }
-            var quantidade = qtd.toInt()
+
+            var gramas = 0
             try {
-                if (quantidade < 0) {
+                gramas = input.toInt()
+                if (gramas < 0) {
                     println("Não é permitido números negativos, tente novamente")
-                    informarQuantidadeLegumeOutros(alimento)
+                    informaquantidadedealimento(alimento)
                 }
-            }
-            catch (e:NumberFormatException) {
+
+            } catch (exception: NumberFormatException) {
                 println("Não é permitido texto, somente número")
             }
-            return quantidade
+            return gramas
         }
-
     }
+
 }
