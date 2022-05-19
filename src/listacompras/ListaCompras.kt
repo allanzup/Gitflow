@@ -36,8 +36,23 @@ class ListaCompras {
             return nome
         }
 
-        fun informarQuantidadeLegumeOutros(alimento: String) {
-            //TODO:implementar lógica (3/3)
+        fun informarQuantidadeLegumeOutros(alimento: String): Int{
+            println("Informe a quantidade de $alimento ")
+            var qtd = readln()
+            if (qtd.isEmpty() || qtd.isBlank()) {
+                throw UnsupportedOperationException("Não é permitido inserir valor vazio")
+            }
+            var quantidade = qtd.toInt()
+            try {
+                if (quantidade < 0) {
+                    println("Não é permitido números negativos, tente novamente")
+                    informarQuantidadeLegumeOutros(alimento)
+                }
+            }
+            catch (e:NumberFormatException) {
+                println("Não é permitido texto, somente número")
+            }
+            return quantidade
         }
 
     }
