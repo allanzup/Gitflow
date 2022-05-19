@@ -38,7 +38,7 @@ class ListaCompras {
                 }
 
             } catch (exception: NumberFormatException) {
-                println("Não é permitido texto, somente número")
+                println("Não é permitido texto, apenas número")
             }
             return gramas
         }
